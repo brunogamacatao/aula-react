@@ -1,0 +1,70 @@
+{
+  "name": "react-starter-template",
+  "description": "A template for writing React based ECMAScript 2015 (ES6) app using webpack, Browsersync, Gulp and more.",
+  "homepage": "http://www.meteorite.bi",
+  "version": "0.1.0",
+  "author": {
+    "name": "Meteorite BI",
+    "email": "info@meteorite.bi",
+    "web": "http://www.meteorite.bi"
+  },
+  "licenses": {
+    "type": "Apache-2.0",
+    "url": "https://github.com/OSBI/react-starter-template/blob/master/LICENSE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSBI/react-starter-template.git"
+  },
+  "keywords": [
+    "react",
+    "react-starter",
+    "webpack"
+  ],
+  "bugs": {
+    "url": "https://github.com/OSBI/react-starter-template/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "WEBPACK_ENV=build ./node_modules/.bin/webpack",
+    "clean": "rm -r node_modules",
+    "dev": "WEBPACK_ENV=dev ./node_modules/.bin/webpack --watch --inline",
+    "test": "karma start",
+    "test:ci": "karma start karma-ci.conf.js"
+  },
+  "engines": {
+    "node": ">=0.10.x",
+    "npm": ">=1.3.x"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.2",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "core-js": "^2.2.0",
+    "eslint": "^2.4.0",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-react": "^4.2.3",
+    "karma": "^0.13.22",
+    "karma-chai": "^0.1.0",
+    "karma-chai-plugins": "^0.7.0",
+    "karma-chai-sinon": "^0.1.5",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.2",
+    "karma-mocha-reporter": "^2.0.0",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sinon": "^1.0.4",
+    "karma-sinon-chai": "^1.2.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.4.5",
+    "phantomjs": "^2.1.3",
+    "react": "^0.14.7",
+    "watch": "^0.17.1",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
