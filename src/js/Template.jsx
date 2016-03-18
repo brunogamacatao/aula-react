@@ -38,24 +38,31 @@ class Template extends React.Component {
    */
   render() {
     return (
-      <Navbar inverse fixedTop>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#">Project name</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Nav>
-          <NavItem eventKey={1} href="#" active>Home</NavItem>
-          <NavItem eventKey={2} href="#">About</NavItem>
-          <NavItem eventKey={3} href="#">Contact</NavItem>
-        </Nav>
-      </Navbar>
-      <Grid>
-        <h1>Bootstrap starter template</h1>
-        <p>Use this document as a way to quickly start any new project.<br>
-        All you get is this text and a mostly barebones HTML document.</p>
-      </Grid>
+      <div>
+        <Navbar inverse fixedTop>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#">Project name</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav>
+              <NavItem eventKey={1} href="#" active>Home</NavItem>
+              <NavItem eventKey={2} href="#">About</NavItem>
+              <NavItem eventKey={3} href="#">Contact</NavItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <Grid>
+          <div className="starter-template">
+            <h1>Bootstrap starter template</h1>
+            <p className="lead">
+              Use this document as a way to quickly start any new project.
+            </p>
+          </div>
+        </Grid>
+      </div>
     );
   }
 }

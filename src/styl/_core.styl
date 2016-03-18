@@ -1,4 +1,4 @@
-/**
+/*!  
  *   Copyright 2016 OSBI Ltd
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,24 +14,9 @@
  *   limitations under the License.
  */
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
-import Template from './Template';
+body
+  padding-top 50px
 
-// webpack loaders
-import '../../index.html';
-import '../../dist/saiku/saiku.css';
-
-/**
- * React router component allows you to define routes in React application.
- * @see https://github.com/reactjs/react-router
- */
-var routes = (
-  <Router history={browserHistory}>
-    <Route path="/" component={Template} />
-  </Router>
-);
-
-// The primary API for rendering into the DOM.
-ReactDOM.render(routes, document.querySelector('#app'));
+.starter-template
+  padding 40px 15px
+  text-align center

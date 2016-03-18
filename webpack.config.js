@@ -117,7 +117,7 @@ if (env === 'dev') {
     }
   });
 
-  figlet(' React Starter Template', {
+  figlet(' Saiku React Starter', {
       font: 'Slant'
     }, function(err, data) {
     console.log(chalk.red(data) + '\n');

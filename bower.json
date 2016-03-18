@@ -1,5 +1,5 @@
 {
-  "name": "react-starter-template",
+  "name": "saiku-react-starter",
   "description": "A template for writing React based ECMAScript 2015 (ES6) app using webpack, Browsersync, Gulp and more.",
   "homepage": "http://www.meteorite.bi",
   "version": "0.1.0",
