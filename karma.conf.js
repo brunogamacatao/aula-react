@@ -15,12 +15,14 @@
  */
 
 var webpackConfig = require('./webpack.config');
+var env = process.env.KARMA;
+
 webpackConfig.devtool = 'inline-source-map';
 
 module.exports = function(config) {
   config.set({
     browsers: ['PhantomJS'],
-    singleRun: true,
+    singleRun: env === 'test' ? true : false,
     frameworks: ['mocha', 'chai', 'sinon', 'sinon-chai'],
     files: [
       'webpack.tests.js'

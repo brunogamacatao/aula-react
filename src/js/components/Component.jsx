@@ -15,18 +15,15 @@
  */
 
 import React from 'react';
-import {
-  Grid,
-  Navbar,
-  Nav,
-  NavItem
-} from 'react-bootstrap';
+import classNames from 'classnames';
 
 /**
- * Starter template. Nothing but the basics: compiled CSS and JavaScript
- * along with a container.
+ * This component should display a content.
+ *
+ * @example
+ * <Component />
  */
-class Template extends React.Component {
+class Component extends React.Component {
 
   /**
    * React components implement the `render()` method that takes input data and
@@ -38,33 +35,21 @@ class Template extends React.Component {
    */
   render() {
     return (
-      <div>
-        <Navbar inverse fixedTop>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">Project name</a>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav>
-              <NavItem eventKey={1} href="#" active>Home</NavItem>
-              <NavItem eventKey={2} href="#">About</NavItem>
-              <NavItem eventKey={3} href="#">Contact</NavItem>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-        <Grid>
-          <div className="starter-template">
-            <h1>Bootstrap starter template</h1>
-            <p className="lead">
-              Use this document as a way to quickly start any new project.
-            </p>
-          </div>
-        </Grid>
+      <div
+        {...this.props}
+        className={classNames('starter-template', this.props.className)}
+      >
+        <h1>Bootstrap starter template</h1>
+        <p className="lead">
+          Use this document as a way to quickly start any new project.
+        </p>
       </div>
     );
   }
 }
 
-export default Template;
+Component.propTypes = {
+  className: React.PropTypes.string
+};
+
+export default Component;

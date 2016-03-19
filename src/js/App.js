@@ -17,7 +17,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
-import Template from './Template';
+import Template from './views/Template';
 
 // webpack loaders
 import '../../index.html';
