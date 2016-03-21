@@ -21564,7 +21564,7 @@
 			// http://w3.org/TR/2012/WD-url-20120524/#collect-url-parameters
 			val = val === undefined ? null : decodeURIComponent(val);
 	
-			if (!ret[key]) {
+			if (!ret.hasOwnProperty(key)) {
 				ret[key] = val;
 			} else if (Array.isArray(ret[key])) {
 				ret[key].push(val);
@@ -21573,7 +21573,7 @@
 			}
 	
 			return ret;
-		}, Object.create(null));
+		}, {});
 	};
 	
 	exports.stringify = function (obj) {
@@ -41843,17 +41843,23 @@
 /* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(251);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -41894,7 +41900,7 @@
 	  }
 	
 	  _createClass(Component, [{
-	    key: "render",
+	    key: 'render',
 	
 	
 	    /**
@@ -41907,17 +41913,19 @@
 	     */
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "starter-template" },
+	        'div',
+	        _extends({}, this.props, {
+	          className: (0, _classnames2.default)('starter-template', this.props.className)
+	        }),
 	        _react2.default.createElement(
-	          "h1",
+	          'h1',
 	          null,
-	          "Bootstrap starter template"
+	          'Bootstrap starter template'
 	        ),
 	        _react2.default.createElement(
-	          "p",
-	          { className: "lead" },
-	          "Use this document as a way to quickly start any new project."
+	          'p',
+	          { className: 'lead' },
+	          'Use this document as a way to quickly start any new project.'
 	        )
 	      );
 	    }
@@ -41925,6 +41933,10 @@
 	
 	  return Component;
 	}(_react2.default.Component);
+	
+	Component.propTypes = {
+	  className: _react2.default.PropTypes.string
+	};
 	
 	exports.default = Component;
 
