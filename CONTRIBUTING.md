@@ -10,3 +10,4 @@ Follow the standards of [**Style Guide**](https://github.com/OSBI/saiku-stylegui
 6. Submit a pull request :)
 
 English is the universal language nowadays, so please don't create or comment on issues using another language.
+
