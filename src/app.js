@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react'
-import Title from 'components/title'
+import Title from 'components/Title'
 
 import './css/style.css'
 
