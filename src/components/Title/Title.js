@@ -2,10 +2,10 @@
 
 import React, { PropTypes } from 'react'
 
-import './title.styl'
+import style from './title.styl'
 
 const Title = ({ children }) => (
-  <h1>{children}</h1>
+  <h1 className={style.title}>{children}</h1>
 )
 
 Title.propTypes = {
