@@ -2,7 +2,7 @@
 
 import React, { PropTypes } from 'react'
 
-import './title.css'
+import './title.styl'
 
 const Title = ({ children }) => (
   <h1>{children}</h1>

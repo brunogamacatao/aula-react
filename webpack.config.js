@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-const path = require('path')
-const webpack = require('webpack')
-const validate = require('webpack-validator')
-
-const HtmlPlugin = require('html-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
+const path = require('path');
+const webpack = require('webpack');
+const validate = require('webpack-validator');
+const HtmlPlugin = require('html-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = validate({
   devtool: 'source-map',
@@ -26,7 +25,6 @@ module.exports = validate({
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin(),
-
     new HtmlPlugin({
       title: 'My app',
       template: path.join(__dirname, 'src', 'html', 'template.html')
@@ -34,24 +32,32 @@ module.exports = validate({
   ],
 
   module: {
-    preLoaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      include: /src/,
-      loader: 'standard'
-    }],
-
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      include: /src/,
-      loader: 'babel'
-    }, {
-      test: /\.css$/,
-      exclude: /node_modules/,
-      include: /src/,
-      loaders: ['style', 'css']
-    }]
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        include: /src/,
+        loader: 'standard'
+      }
+    ],
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        include: /src/,
+        loader: 'babel'
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        include: /src/,
+        loaders: ['style', 'css']
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style-loader!css-loader!stylus-loader'
+      }
+    ]
   },
 
   resolve: {
@@ -60,4 +66,4 @@ module.exports = validate({
       components: path.join(__dirname, 'src', 'components')
     }
   }
-})
+});
