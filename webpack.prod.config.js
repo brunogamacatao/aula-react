@@ -53,6 +53,15 @@ module.exports = validate({
         exclude: /node_modules/,
         include: /src/,
         loader: ExtractTextPlugin.extract('style', 'css')
+      },
+      {
+        test: /\.styl$/,
+        loaders: [
+          'style-loader',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'postcss-loader',
+          'stylus-loader'
+        ]
       }
     ]
   },

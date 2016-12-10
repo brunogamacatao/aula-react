@@ -3,7 +3,7 @@
 import React from 'react'
 import Title from 'components/Title'
 
-import './css/style.css'
+import './styl/main.styl'
 
 const App = () => (
   <div>
