@@ -13,11 +13,11 @@ module.exports = validate({
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    path.join(__dirname, 'src', 'index')
+    path.join(__dirname, '../src', 'index')
   ],
 
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, '../build'),
     filename: '[name]-[hash].js',
     publicPath: ''
   },
@@ -27,12 +27,12 @@ module.exports = validate({
     new DashboardPlugin(),
     new HtmlPlugin({
       title: 'My app',
-      template: path.join(__dirname, 'src', 'html', 'template.html')
+      template: path.join(__dirname, '../src', 'html', 'template.html')
     })
   ],
 
   eslint: {
-    configFile: path.join(__dirname, 'eslint.dev.js'),
+    configFile: path.join(__dirname, './eslint.dev.js'),
     useEslintrc: false
   },
 
@@ -40,7 +40,7 @@ module.exports = validate({
     preLoaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         include: /src/,
         loader: 'eslint'
       }
@@ -48,13 +48,13 @@ module.exports = validate({
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         include: /src/,
         loader: 'babel'
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         include: /src/,
         loaders: ['style', 'css']
       },
@@ -72,8 +72,8 @@ module.exports = validate({
 
   resolve: {
     alias: {
-      src: path.join(__dirname, 'src'),
-      components: path.join(__dirname, 'src', 'components')
+      src: path.join(__dirname, '../src'),
+      components: path.join(__dirname, '../src', 'components')
     }
   }
 });
