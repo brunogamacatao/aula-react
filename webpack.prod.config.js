@@ -32,13 +32,18 @@ module.exports = validate({
     new webpack.optimize.OccurrenceOrderPlugin()
   ],
 
+  eslint: {
+    configFile: path.join(__dirname, 'eslint.dev.js'),
+    useEslintrc: false
+  },
+
   module: {
     preLoaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         include: /src/,
-        loader: 'standard'
+        loader: 'eslint'
       }
     ],
     loaders: [
