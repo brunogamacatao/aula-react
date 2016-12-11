@@ -2,7 +2,7 @@
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const config = require('./config/webpack.config');
+const config = require('./config/webpack.dev');
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,

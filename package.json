@@ -3,7 +3,7 @@
     "start": "webpack-dashboard -- node server.js",
     "test": "jest --coverage",
     "test:watch": "yarn test -- --watch",
-    "build": "cross-env NODE_ENV=production webpack --progress --config ./config/webpack.prod.config -p",
+    "build": "cross-env NODE_ENV=production webpack --progress --config ./config/webpack.prod -p",
     "storybook": "start-storybook -p 6006 -c storybook",
     "build-storybook": "build-storybook -c storybook"
   },
@@ -35,6 +35,7 @@
     "webpack": "^1.14.0",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^1.1.0",
     "webpack-validator": "^2.2.12"
   },
   "dependencies": {

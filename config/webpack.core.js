@@ -1,13 +1,11 @@
 'use strict';
 
-const path = require('path');
 const webpack = require('webpack');
 const validate = require('webpack-validator');
 const HtmlPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = validate({
-  entry: path.join(__dirname, '../src', 'index'),
-
   output: {
     path: path.join(__dirname, '../build'),
     filename: '[name]-[hash].js'
@@ -21,7 +19,7 @@ module.exports = validate({
   ],
 
   eslint: {
-    configFile: path.join(__dirname, './eslint.dev.js'),
+    configFile: path.join(__dirname, './eslint.core.js'),
     useEslintrc: false
   },
 
@@ -40,12 +38,6 @@ module.exports = validate({
         exclude: /(node_modules|bower_components)/,
         include: /src/,
         loader: 'babel'
-      },
-      {
-        test: /\.css$/,
-        exclude: /(node_modules|bower_components)/,
-        include: /src/,
-        loaders: ['style', 'css']
       },
       {
         test: /\.styl$/,
