@@ -14,21 +14,17 @@
  *   limitations under the License.
  */
 
-'use strict';
+import React, { Component } from 'react';
+import Title from '../Title';
 
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const config = require('./config/webpack.dev');
-
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  historyApiFallback: true,
-  stats: { colors: true }
-}).listen(3000, (err) => {
-  if (err) {
-    return console.log(err);
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Title>My App</Title>
+      </div>
+    );
   }
+}
 
-  console.log('Listening on http://localhost:3000');
-});
+export default App;
