@@ -19,6 +19,9 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from './components/App';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+
 const renderApp = (NextApp) => {
   render(
     <AppContainer>

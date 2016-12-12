@@ -49,8 +49,7 @@ module.exports = validate(merge.smart(core, {
     loaders: [
       {
         test: /\.css$/,
-        exclude: /(node_modules|bower_components)/,
-        include: /src/,
+        include: /(node_modules|bower_components|src)/,
         loader: ExtractTextPlugin.extract('style', 'css')
       }
     ]

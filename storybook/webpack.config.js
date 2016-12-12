@@ -27,5 +27,5 @@ module.exports = function(config, env) {
     loader: 'standard'
   });
 
-  return newConfig
+  return newConfig;
 };
