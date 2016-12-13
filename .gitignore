@@ -10,6 +10,8 @@ pids
 
 # Coverage
 lib-cov
+jest
+coverage
 .coverage
 .nyc_output
 
