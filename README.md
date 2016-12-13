@@ -1,5 +1,7 @@
 # Saiku React Starter
 
+A template for writing React based ECMAScript 2015 (ES6) + Redux + React Router + Webpack and more.
+
 ## What's inside it?
 
 1. Webpack;
@@ -31,3 +33,5 @@
 - `yarn build-storybook`: Build Storybook to static files
 
 ## License
+
+[Apache License Version 2](https://github.com/OSBI/saiku-react-starter/blob/master/LICENSE) © Meteorite BI
