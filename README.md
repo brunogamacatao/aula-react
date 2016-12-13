@@ -42,6 +42,14 @@ A template for writing React based ECMAScript 2015 (ES6) + Redux + React Router 
 - `yarn storybook (or npm run storybook)`: Run Storybook on 6006 port
 - `yarn build-storybook`: Build Storybook to static files
 
+## Contributing
+
+If you want to help, please read the [Contributing](https://github.com/OSBI/saiku-react-starter/blob/master/CONTRIBUTING.md) guide.
+
+## History
+
+For detailed changelog, see [Releases](https://github.com/OSBI/saiku-react-starter/releases).
+
 ## License
 
 [Apache License Version 2](https://github.com/OSBI/saiku-react-starter/blob/master/LICENSE) © Meteorite BI
