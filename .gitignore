@@ -18,6 +18,7 @@ lib-cov
 
 # build directory
 build
+storybook-static
 
 # Dependency directories
 node_modules
