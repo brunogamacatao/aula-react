@@ -17,8 +17,8 @@ A template for writing React based ECMAScript 2015 (ES6) + Redux + React Router 
 - [x] [PostCSS](https://github.com/postcss/postcss)
 - [x] [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [x] [ESLint](http://eslint.org/)
-- [x] [react-bootstrap](https://react-bootstrap.github.io/) example
 - [x] [Travis CI](https://travis-ci.org/)
+- [x] [React-Bootstrap](https://react-bootstrap.github.io/) example
 - [x] HTML and CSS generated automatically by Webpack
 
 ## Dependencies:

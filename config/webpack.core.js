@@ -111,7 +111,7 @@ module.exports = validate({
     ]
   },
 
-  postcss: function() {
+  postcss: () => {
     return [autoprefixer];
   },
 
