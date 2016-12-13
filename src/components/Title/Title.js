@@ -25,7 +25,7 @@ class Title extends Component {
 
   render() {
     return (
-      <h1 className={style.title}>
+      <h1 className={style.Title}>
         {this.props.children}
       </h1>
     );

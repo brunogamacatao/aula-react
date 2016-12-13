@@ -21,6 +21,7 @@ import App from './components/App';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
+import './index.styl';
 
 const renderApp = (NextApp) => {
   render(
