@@ -19,6 +19,7 @@
 const webpack = require('webpack');
 const validate = require('webpack-validator');
 const HtmlPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const path = require('path');
 
 module.exports = validate({
@@ -108,6 +109,10 @@ module.exports = validate({
         loader: 'url'
       }
     ]
+  },
+
+  postcss: function() {
+    return [autoprefixer];
   },
 
   node: {

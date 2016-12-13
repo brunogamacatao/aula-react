@@ -4,12 +4,21 @@ A template for writing React based ECMAScript 2015 (ES6) + Redux + React Router 
 
 ## What's inside it?
 
-1. Webpack;
-2. Babel;
-3. React hot loader;
-4. HTML and CSS generated automatically by webpack;
-5. Jest for tests and Chai for assertions;
-6. Storybook to create isolatelly components' stories
+- [x] [Webpack](https://webpack.github.io)
+- [x] [Webpack Dashboard](https://github.com/FormidableLabs/webpack-dashboard)
+- [x] [React](https://facebook.github.io/react/)
+- [ ] [Redux](https://github.com/reactjs/redux)
+- [x] [React Hot Loader](https://github.com/gaearon/react-hot-loader)
+- [x] [Jest](https://facebook.github.io/jest/) for tests and [Chai](http://chaijs.com/) for assertions
+- [x] [Storybook](https://getstorybook.io/) to create isolated components' stories
+- [x] [Babel](https://babeljs.io/)
+- [x] [Stylus CSS preprocessor](http://stylus-lang.com/)
+- [x] [CSS Modules](https://github.com/css-modules/css-modules)
+- [x] [PostCSS](https://github.com/postcss/postcss)
+- [x] [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [x] [ESLint](http://eslint.org/)
+- [x] [react-bootstrap](https://react-bootstrap.github.io/) example
+- [x] HTML and CSS generated automatically by Webpack
 
 ## Dependencies:
 
