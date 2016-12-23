@@ -14,5 +14,20 @@
  *   limitations under the License.
  */
 
-// Colors
-$saiku = #ae1817
+import React, { Component } from 'react';
+import Title from '../Title';
+
+class Home extends Component {
+  render() {
+    return (
+      <div>
+        <Title>My App</Title>
+        <p className="lead">
+          Use this document as a way to quickly start any new project.
+        </p>
+      </div>
+    );
+  }
+}
+
+export default Home;

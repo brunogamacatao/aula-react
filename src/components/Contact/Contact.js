@@ -14,5 +14,14 @@
  *   limitations under the License.
  */
 
-// Colors
-$saiku = #ae1817
+import React, { Component } from 'react';
+
+class Contact extends Component {
+  render() {
+    return (
+      <p>Page contact</p>
+    );
+  }
+}
+
+export default Contact;

@@ -14,5 +14,4 @@
  *   limitations under the License.
  */
 
-// Colors
-$saiku = #ae1817
+export { default } from './Contact.js';

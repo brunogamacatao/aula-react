@@ -14,5 +14,14 @@
  *   limitations under the License.
  */
 
-// Colors
-$saiku = #ae1817
+import React, { Component } from 'react';
+
+class About extends Component {
+  render() {
+    return (
+      <p>Page about</p>
+    );
+  }
+}
+
+export default About;

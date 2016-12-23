@@ -7,7 +7,7 @@ A template for writing React based ECMAScript 2015 (ES6) + Redux + React Router 
 - [x] [Webpack](https://webpack.github.io)
 - [x] [Webpack Dashboard](https://github.com/FormidableLabs/webpack-dashboard)
 - [x] [React](https://facebook.github.io/react/)
-- [ ] [React Router](https://github.com/ReactTraining/react-router)
+- [x] [React Router](https://github.com/ReactTraining/react-router)
 - [ ] [Redux](https://github.com/reactjs/redux)
 - [x] [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [x] [Jest](https://facebook.github.io/jest/) for tests and [Chai](http://chaijs.com/) for assertions

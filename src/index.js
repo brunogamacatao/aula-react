@@ -17,26 +17,26 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './components/App';
+import Root from './containers/Root';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './styl/saiku.styl';
 
-const renderApp = (NextApp) => {
+const renderApp = (NewRoot) => {
   render(
     <AppContainer>
-      <NextApp />
+      <NewRoot />
     </AppContainer>,
     document.querySelector('[data-js="app"]')
   );
 };
 
-renderApp(App);
+renderApp(Root);
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const NextApp = require('./components/App').default;
-    renderApp(NextApp);
+  module.hot.accept('./containers/Root', () => {
+    const NewRoot = require('./containers/Root').default;
+    renderApp(NewRoot);
   });
 }

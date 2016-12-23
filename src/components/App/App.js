@@ -21,7 +21,7 @@ import {
   Nav,
   NavItem
 } from 'react-bootstrap';
-import Title from '../Title';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import style from './App.styl';
 
@@ -38,16 +38,21 @@ class App extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem eventKey={1} href="#">Home</NavItem>
-              <NavItem eventKey={2} href="#">About</NavItem>
-              <NavItem eventKey={3} href="#">Contact</NavItem>
+              <LinkContainer to="/">
+                <NavItem eventKey={1}>Home</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/about">
+                <NavItem eventKey={2}>About</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/contact">
+                <NavItem eventKey={3}>Contact</NavItem>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
         <Grid>
           <div className={style.App}>
-            <Title>My App</Title>
-            <p className="lead">Use this document as a way to quickly start any new project.</p>
+            {React.cloneElement(this.props.children, this.props)}
           </div>
         </Grid>
       </div>
