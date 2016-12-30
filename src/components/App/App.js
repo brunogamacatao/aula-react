@@ -41,11 +41,14 @@ class App extends Component {
               <LinkContainer to="/">
                 <NavItem eventKey={1}>Home</NavItem>
               </LinkContainer>
+              <LinkContainer to="/filter">
+                <NavItem eventKey={2}>Filter Table</NavItem>
+              </LinkContainer>
               <LinkContainer to="/about">
-                <NavItem eventKey={2}>About</NavItem>
+                <NavItem eventKey={3}>About</NavItem>
               </LinkContainer>
               <LinkContainer to="/contact">
-                <NavItem eventKey={3}>Contact</NavItem>
+                <NavItem eventKey={4}>Contact</NavItem>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>

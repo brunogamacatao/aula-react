@@ -2,13 +2,15 @@
 
 A template for writing React based ECMAScript 2015 (ES6) + Redux + React Router + Webpack and more.
 
+![](./react-eco.gif)
+
 ## What's inside it?
 
 - [x] [Webpack](https://webpack.github.io)
 - [x] [Webpack Dashboard](https://github.com/FormidableLabs/webpack-dashboard)
 - [x] [React](https://facebook.github.io/react/)
 - [x] [React Router](https://github.com/ReactTraining/react-router)
-- [ ] [Redux](https://github.com/reactjs/redux)
+- [x] [Redux](https://github.com/reactjs/redux)
 - [x] [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [x] [Jest](https://facebook.github.io/jest/) for tests and [Chai](http://chaijs.com/) for assertions
 - [x] [Storybook](https://getstorybook.io/) to create isolated components' stories

@@ -14,22 +14,29 @@
  *   limitations under the License.
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
-  Route,
-  IndexRoute
-} from 'react-router';
-import App from './components/App';
-import Home from './components/Home';
-import FilterTable from './components/FilterTable';
-import About from './components/About';
-import Contact from './components/Contact';
+  FormGroup,
+  ControlLabel,
+  FormControl
+} from 'react-bootstrap';
 
-export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={Home} />
-    <Route path="/filter" component={FilterTable} />
-    <Route path="/about" component={About} />
-    <Route path="/contact" component={Contact} />
-  </Route>
-);
+class FilterTable extends Component {
+  render() {
+    return (
+      <div>
+        <form>
+          <FormGroup controlId="formFilterTable">
+            <ControlLabel>Filter Table</ControlLabel>
+            <FormControl
+              type="text"
+              placeholder="Enter a product name"
+            />
+          </FormGroup>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default FilterTable;
