@@ -16,15 +16,18 @@
 
 import React, { Component } from 'react';
 import {
-  Router,
-  browserHistory
+  Router
 } from 'react-router';
+import { Provider } from 'react-redux';
+import store, { history } from '../store';
 import routes from '../routes';
 
 class Root extends Component {
   render() {
     return (
-      <Router history={browserHistory} routes={routes} />
+      <Provider store={store}>
+        <Router history={history} routes={routes} />
+      </Provider>
     );
   }
 }

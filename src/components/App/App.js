@@ -15,6 +15,7 @@
  */
 
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import {
   Grid,
   Navbar,
@@ -32,7 +33,7 @@ class App extends Component {
         <Navbar fixedTop inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">Project name</a>
+              <Link to="/">Project name</Link>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>

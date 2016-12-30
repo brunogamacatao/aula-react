@@ -14,13 +14,22 @@
  *   limitations under the License.
  */
 
-function products(state = '', action) {
-  switch(action.type) {
-    case 'FILTER_PRODUCT':
-      return action.product
-    default:
-      return state;
-  }
-}
+import { createStore, compose } from 'redux';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { browserHistory } from 'react-router';
+import rootReducer from '../reducers/index';
+import products from '../data/products';
 
-export default products;
+const defaultState = {
+  products
+};
+
+const enhancers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);
+
+const store = createStore(rootReducer, defaultState, enhancers);
+
+export const history = syncHistoryWithStore(browserHistory, store);
+
+export default store;
