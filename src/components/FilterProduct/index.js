@@ -14,22 +14,4 @@
  *   limitations under the License.
  */
 
-import React from 'react';
-import {
-  Route,
-  IndexRoute
-} from 'react-router';
-import App from './components/App';
-import Home from './components/Home';
-import FilterProduct from './components/FilterProduct';
-import About from './components/About';
-import Contact from './components/Contact';
-
-export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={Home} />
-    <Route path="/filter" component={FilterProduct} />
-    <Route path="/about" component={About} />
-    <Route path="/contact" component={Contact} />
-  </Route>
-);
+export { default } from './FilterProduct.js';

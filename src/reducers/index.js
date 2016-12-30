@@ -14,4 +14,13 @@
  *   limitations under the License.
  */
 
-export { default } from './FilterTable.js';
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
+import products from './products';
+
+const rootReducer = combineReducers({
+  products,
+  routing: routerReducer
+});
+
+export default rootReducer;

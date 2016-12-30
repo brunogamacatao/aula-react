@@ -21,13 +21,13 @@ import {
   FormControl
 } from 'react-bootstrap';
 
-class FilterTable extends Component {
+class FilterProduct extends Component {
   render() {
     return (
       <div>
         <form>
-          <FormGroup controlId="formFilterTable">
-            <ControlLabel>Filter Table</ControlLabel>
+          <FormGroup controlId="formFilterProduct">
+            <ControlLabel>Filter Product</ControlLabel>
             <FormControl
               type="text"
               placeholder="Enter a product name"
@@ -39,4 +39,4 @@ class FilterTable extends Component {
   }
 }
 
-export default FilterTable;
+export default FilterProduct;

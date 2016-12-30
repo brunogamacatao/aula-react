@@ -42,7 +42,7 @@ class App extends Component {
                 <NavItem eventKey={1}>Home</NavItem>
               </LinkContainer>
               <LinkContainer to="/filter">
-                <NavItem eventKey={2}>Filter Table</NavItem>
+                <NavItem eventKey={2}>Filter Product</NavItem>
               </LinkContainer>
               <LinkContainer to="/about">
                 <NavItem eventKey={3}>About</NavItem>
