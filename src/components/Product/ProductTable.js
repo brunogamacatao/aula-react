@@ -32,7 +32,7 @@ class ProductTable extends Component {
 
       if (productName.indexOf(filter) !== -1) {
         productRows.push(
-          <ProductRow key={productName} data={product} />
+          <ProductRow key={productName} product={product} />
         );
       }
     });

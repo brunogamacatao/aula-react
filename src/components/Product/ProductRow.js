@@ -18,16 +18,14 @@ import React, { Component, PropTypes } from 'react';
 
 class ProductRow extends Component {
   static propTypes = {
-    data: PropTypes.object
+    product: PropTypes.object
   };
 
   render() {
-    const { data } = this.props;
+    const { product } = this.props;
 
     return (
-      <div>
-        <p>{data.name} = {data.price}</p>
-      </div>
+      <p>{product.name} = {product.price}</p>
     );
   }
 }
