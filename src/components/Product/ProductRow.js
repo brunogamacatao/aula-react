@@ -14,4 +14,22 @@
  *   limitations under the License.
  */
 
+import React, { Component, PropTypes } from 'react';
 
+class ProductRow extends Component {
+  static propTypes = {
+    data: PropTypes.object
+  };
+
+  render() {
+    const { data } = this.props;
+
+    return (
+      <div>
+        <p>{data.name} = {data.price}</p>
+      </div>
+    );
+  }
+}
+
+export default ProductRow;

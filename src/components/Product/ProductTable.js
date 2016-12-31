@@ -14,4 +14,39 @@
  *   limitations under the License.
  */
 
+import React, { Component, PropTypes } from 'react';
+import ProductRow from './ProductRow';
+import products from '../../data/products';
 
+class ProductTable extends Component {
+  static propTypes = {
+    filter: PropTypes.string
+  };
+
+  renderProducts() {
+    let productRows = [];
+
+    products.forEach((product) => {
+      const productName = product.name.toLowerCase();
+      const filter = this.props.filter.toLowerCase();
+
+      if (productName.indexOf(filter) !== -1) {
+        productRows.push(
+          <ProductRow key={productName} data={product} />
+        );
+      }
+    });
+
+    return productRows;
+  }
+
+  render() {
+    return (
+      <div>
+        {this.renderProducts()}
+      </div>
+    );
+  }
+}
+
+export default ProductTable;

@@ -20,6 +20,7 @@ import {
   ControlLabel,
   FormControl
 } from 'react-bootstrap';
+import { ProductTable } from '../Product';
 
 class FilterProduct extends Component {
   onFilter(event) {
@@ -42,6 +43,7 @@ class FilterProduct extends Component {
             />
           </FormGroup>
         </form>
+        <ProductTable filter="test" />
       </div>
     );
   }

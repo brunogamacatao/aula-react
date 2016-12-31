@@ -14,10 +14,4 @@
  *   limitations under the License.
  */
 
-import ProductTable from './ProductTable';
-import ProductRow from './ProductRow';
-
-export default {
-  ProductTable,
-  ProductRow
-};
+export ProductTable from './ProductTable';
