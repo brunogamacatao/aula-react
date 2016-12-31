@@ -14,9 +14,9 @@
  *   limitations under the License.
  */
 
-export function filterProduct(product) {
+export function filterProduct(filter) {
   return {
     type: 'FILTER_PRODUCT',
-    product
+    filter
   }
 }

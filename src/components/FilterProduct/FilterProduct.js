@@ -26,10 +26,14 @@ class FilterProduct extends Component {
   onFilter(event) {
     event.preventDefault();
 
-    console.log(this.filter.value);
+    const filter = this.filter.value;
+
+    this.props.filterProduct(filter);
   }
 
   render() {
+    const { filter } = this.props;
+
     return (
       <div>
         <form>
@@ -43,7 +47,7 @@ class FilterProduct extends Component {
             />
           </FormGroup>
         </form>
-        <ProductTable filter="test" />
+        <ProductTable filter={filter} {...this.props} />
       </div>
     );
   }

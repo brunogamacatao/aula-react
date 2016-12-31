@@ -21,7 +21,7 @@ import App from '../App';
 
 function mapStateToProps(state) {
   return {
-    products: state.products
+    filter: state.filter
   }
 }
 

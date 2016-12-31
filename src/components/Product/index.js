@@ -14,4 +14,4 @@
  *   limitations under the License.
  */
 
-export { default } from './ProductTable.js';
+export ProductTable from './ProductTable';

@@ -14,13 +14,13 @@
  *   limitations under the License.
  */
 
-function products(state = '', action) {
+function filter(state = '', action) {
   switch(action.type) {
     case 'FILTER_PRODUCT':
-      return action.product
+      return action.filter
     default:
       return state;
   }
 }
 
-export default products;
+export default filter;
