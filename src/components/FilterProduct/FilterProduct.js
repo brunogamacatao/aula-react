@@ -22,6 +22,12 @@ import {
 } from 'react-bootstrap';
 
 class FilterProduct extends Component {
+  onFilter(event) {
+    event.preventDefault();
+
+    console.log(this.filter.value);
+  }
+
   render() {
     return (
       <div>
@@ -30,6 +36,8 @@ class FilterProduct extends Component {
             <ControlLabel>Filter Product</ControlLabel>
             <FormControl
               type="text"
+              inputRef={(input) => this.filter = input}
+              onChange={(e) => this.onFilter(e)}
               placeholder="Enter a product name"
             />
           </FormGroup>

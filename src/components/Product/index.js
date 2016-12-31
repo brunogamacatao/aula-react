@@ -14,22 +14,10 @@
  *   limitations under the License.
  */
 
-import React from 'react';
-import {
-  Route,
-  IndexRoute
-} from 'react-router';
-import Main from './components/Main';
-import Home from './components/Home';
-import FilterProduct from './components/FilterProduct';
-import About from './components/About';
-import Contact from './components/Contact';
+import ProductTable from './ProductTable';
+import ProductRow from './ProductRow';
 
-export default (
-  <Route path="/" component={Main}>
-    <IndexRoute component={Home} />
-    <Route path="/filter" component={FilterProduct} />
-    <Route path="/about" component={About} />
-    <Route path="/contact" component={Contact} />
-  </Route>
-);
+export default {
+  ProductTable,
+  ProductRow
+};
