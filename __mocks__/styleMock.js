@@ -14,11 +14,6 @@
  *   limitations under the License.
  */
 
-import React from 'react';
-import { render } from 'react-dom';
-import Title from './Title';
+'use strict';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(<Title />, div);
-});
+module.exports = {};
