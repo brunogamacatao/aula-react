@@ -17,12 +17,11 @@
 'use strict';
 
 const webpack = require('webpack');
-const validate = require('webpack-validator');
 const HtmlPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 
-module.exports = validate({
+module.exports = {
   output: {
     path: path.join(__dirname, '../build'),
     filename: '[name]-[hash].js'
@@ -32,33 +31,38 @@ module.exports = validate({
     new HtmlPlugin({
       title: 'My app',
       template: path.join(__dirname, '../src', 'html', 'template.html')
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        eslint: {
+          configFile: path.join(__dirname, './eslint.core.js'),
+          useEslintrc: false
+        },
+        postcss: () => {
+          return [autoprefixer];
+        }
+      }
     })
   ],
 
-  eslint: {
-    configFile: path.join(__dirname, './eslint.core.js'),
-    useEslintrc: false
-  },
-
   module: {
-    preLoaders: [
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        include: /src/,
+        use: 'eslint-loader'
+      },
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         include: /src/,
-        loader: 'eslint'
-      }
-    ],
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        include: /src/,
-        loader: 'babel'
+        use: 'babel-loader'
       },
       {
         test: /\.styl$/,
-        loaders: [
+        use: [
           'style-loader',
           'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
           'postcss-loader',
@@ -67,52 +71,64 @@ module.exports = validate({
       },
       {
         test: /\.json$/,
-        loader: 'json'
-      },
-      {
-        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url',
-        query: {
-          limit: 10000,
-          mimetype: 'application/font-woff'
-        }
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url',
-        query: {
-          limit: '10000',
-          mimetype: 'application/octet-stream'
-        }
+        use: 'json-loader'
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file'
+        use: 'file-loader'
+      },
+      {
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              mimetype: 'application/font-woff'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: '10000',
+              mimetype: 'application/octet-stream'
+            }
+          }
+        ]
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'svg-url',
-        query: {
-          limit: '10000',
-          mimetype: 'application/svg+xml'
-        }
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: '10000',
+              mimetype: 'application/svg+xml'
+            }
+          }
+        ]
       },
       {
         test: /\.(png|jpg)$/,
-        loader: 'url',
-        query: {
-          limit: 8192
-        }
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       },
       {
         test: /\.ico(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url'
+        use: 'url-loader'
       }
     ]
-  },
-
-  postcss: () => {
-    return [autoprefixer];
   },
 
   node: {
@@ -127,4 +143,4 @@ module.exports = validate({
       components: path.join(__dirname, '../src', 'components')
     }
   }
-});
+};

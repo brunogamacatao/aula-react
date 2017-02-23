@@ -18,14 +18,12 @@
 
 const webpack = require('webpack');
 const FaviconsPlugin = require('favicons-webpack-plugin');
-const validate = require('webpack-validator');
-const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const merge = require('webpack-merge');
 const core = require('./webpack.core');
 
-module.exports = validate(merge.smart(core, {
+module.exports = merge.smart(core, {
   entry: path.join(__dirname, '../src', 'index'),
 
   plugins: [
@@ -39,21 +37,26 @@ module.exports = validate(merge.smart(core, {
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false }
     }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        eslint: {
+          configFile: path.join(__dirname, './eslint.dev.js')
+        }
+      }
+    })
   ],
 
-  eslint: {
-    configFile: path.join(__dirname, './eslint.dev.js')
-  },
-
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
         include: /(node_modules|bower_components|src)/,
-        loader: ExtractTextPlugin.extract('style', 'css')
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       }
     ]
   }
-}));
+});
