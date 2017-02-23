@@ -17,6 +17,7 @@
 'use strict';
 
 const webpack = require('webpack');
+const FaviconsPlugin = require('favicons-webpack-plugin');
 const validate = require('webpack-validator');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -28,6 +29,7 @@ module.exports = validate(merge.smart(core, {
   entry: path.join(__dirname, '../src', 'index'),
 
   plugins: [
+    new FaviconsPlugin('./src/assets/logo.png'),
     new ExtractTextPlugin('[name]-[hash].css'),
     new webpack.DefinePlugin({
       'process.env': {
